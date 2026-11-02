@@ -88,6 +88,7 @@
     /* text roll on hover */
     .roll { display: inline-flex; overflow: hidden; vertical-align: top; }
     .roll > span { position: relative; display: block; transition: transform .6s var(--ease); }
+    .ext { font-style: normal; }
     .roll > span::after { content: attr(data-text); position: absolute; left: 0; top: 100%; }
     .roll:hover > span, .roll:focus-visible > span { transform: translateY(-100%); }
 
@@ -528,12 +529,15 @@
       .contact-head { flex-direction: column; align-items: flex-start; }
       .contact-sign { width: 58vw; margin-top: 1.5rem; }
       .contact-row { flex-direction: column-reverse; align-items: stretch; gap: 40px; margin-top: 40px; }
-      .contact-cta { width: 100%; aspect-ratio: auto; border-radius: 999px; padding: 20px; font-size: 18px; }
+      .contact-cta { display: none; }
       .contact-cta::before { border-radius: 999px; }
       .contact-cta .arrow { display: inline; margin-left: .4rem; }
       .contact-links { grid-template-columns: 1fr; gap: 0; }
       .contact-links .label { margin-bottom: .5rem; }
       .contact-links a { padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, .25); font-size: 20px; }
+      .contact-links a[target] { display: flex; justify-content: space-between; align-items: center; }
+      .contact-links .ext { display: none; }
+      .contact-links a[target]::after { content: '→'; width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%; border: 1px solid currentColor; display: grid; place-items: center; font-size: 15px; opacity: .6; }
       .contact-bottom { flex-direction: column; gap: .5rem; }
     }
 
@@ -785,9 +789,9 @@
         <div class="contact-links">
           <span class="label">Find me on</span>
           <a href="tel:+919539661752" class="roll"><span data-text="+91 95396 61752">+91 95396 61752</span></a>
-          <a href="https://wa.me/919539661752" target="_blank" rel="noopener" class="roll"><span data-text="WhatsApp ↗">WhatsApp ↗</span></a>
-          <a href="https://www.instagram.com/manusiinan/" target="_blank" rel="noopener" class="roll"><span data-text="Instagram ↗">Instagram ↗</span></a>
-          <a href="https://www.linkedin.com/in/muhammed-sinan-607501326" target="_blank" rel="noopener" class="roll"><span data-text="LinkedIn ↗">LinkedIn ↗</span></a>
+          <a href="https://wa.me/919539661752" target="_blank" rel="noopener" class="roll"><span data-text="WhatsApp ↗">WhatsApp <i class="ext">↗</i></span></a>
+          <a href="https://www.instagram.com/manusiinan/" target="_blank" rel="noopener" class="roll"><span data-text="Instagram ↗">Instagram <i class="ext">↗</i></span></a>
+          <a href="https://www.linkedin.com/in/muhammed-sinan-607501326" target="_blank" rel="noopener" class="roll"><span data-text="LinkedIn ↗">LinkedIn <i class="ext">↗</i></span></a>
         </div>
         <a href="https://wa.me/919539661752" target="_blank" rel="noopener" class="contact-cta magnetic"><span>Let's talk<span class="arrow">↗</span></span></a>
       </div>
